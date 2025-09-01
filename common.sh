@@ -31,7 +31,7 @@ EOF
 
     sed -i "s%^Architecture: .*%Architecture: ${arch}%g" ${pkg}/debian/control
     cd ${pkg}
-    DEB_BUILD_OPTIONS="nocheck nostrip" dpkg-buildpackage -b --host-arch ${arch}
+    DEB_BUILD_OPTIONS="nocheck nostrip" dpkg-buildpackage -b -d --host-arch ${arch}
     rm -rf debian/.debhelper
     rm -f debian/debhelper-build-stamp
     rm -f debian/files
