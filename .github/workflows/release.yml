@@ -2,7 +2,8 @@ name: release
 
 on:
   push:
-    branches: master
+    tags:
+      - '*'
 
 jobs:
   build:
@@ -27,7 +28,7 @@ jobs:
 
   publish:
     name: Trigger packages publishing
-    needs: debian
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Trigger APT repository update
