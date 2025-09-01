@@ -20,6 +20,7 @@ jobs:
       - run: sudo apt-get update
       - run: ./build.sh
       - run: find . -name '*.deb'
+      - run: find .. -name '*.deb'
       # - name: Release Debian Package
       #   uses: softprops/action-gh-release@v2
       #   with:
