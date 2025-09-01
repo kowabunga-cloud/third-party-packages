@@ -1,12 +1,12 @@
 #/!bin/bash
 
-aptly_pkg_download() {
+pkg_download() {
     local src="$1"
     local dst="$2"
     wget -q "$src" -O "$dst"
 }
 
-aptly_pkg_exists() {
+pkg_exists() {
     local pkg="$1"
     local version="$2"
     local arch="$3"
@@ -15,7 +15,7 @@ aptly_pkg_exists() {
     return $?
 }
 
-aptly_pkg_build() {
+pkg_build() {
     local pkg="$1"
     local version="$2"
     local arch="$3"
