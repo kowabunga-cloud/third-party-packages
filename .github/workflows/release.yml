@@ -19,22 +19,20 @@ jobs:
       - run: sudo cp kowabunga.sources /etc/apt/sources.list.d/kowabunga.sources
       - run: sudo apt-get update
       - run: ./build.sh
-      - run: find . -name '*.deb'
-      - run: find .. -name '*.deb'
-      # - name: Release Debian Package
-      #   uses: softprops/action-gh-release@v2
-      #   with:
-      #     files: |
-      #       ../*.deb
+      - name: Release Debian Package
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            ./packages/*.deb
 
-  # publish:
-  #   name: Trigger packages publishing
-  #   needs: debian
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Trigger APT repository update
-  #       uses: peter-evans/repository-dispatch@v3
-  #       with:
-  #         token: '${{ secrets.PAT_PACKAGES_WORKFLOW_TOKEN }}'
-  #         repository: kowabunga-cloud/packages
-  #         event-type: Publish-Deb
+  publish:
+    name: Trigger packages publishing
+    needs: debian
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger APT repository update
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: '${{ secrets.PAT_PACKAGES_WORKFLOW_TOKEN }}'
+          repository: kowabunga-cloud/packages
+          event-type: Publish-Deb
