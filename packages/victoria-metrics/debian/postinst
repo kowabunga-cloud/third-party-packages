@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -e
+
+case "$1" in
+  configure)
+    name=victoria-metrics
+    adduser --quiet --system --group --home /var/lib/$name --no-create-home \
+            --gecos "VictoriaMetrics daemon" --force-badname _$name
+
+    if ! dpkg-statoverride --list /var/lib/$name >/dev/null; then
+      chown _$name:_$name /var/lib/$name
+    fi
+  ;;
+
+  triggered|abort-upgrade|abort-remove|abort-deconfigure)
+    :
+  ;;
+
+  *)
+    echo "postinst called with unknown argument '$1'" >&2
+    exit 1
+  ;;
+esac
+
+exit 0

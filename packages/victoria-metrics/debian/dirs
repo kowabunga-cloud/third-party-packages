@@ -1,0 +1,5 @@
+etc/default
+lib/systemd/system
+usr/bin
+var/lib/victoria-metrics
+var/log/victoria-metrics

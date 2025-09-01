@@ -1,0 +1,10 @@
+bin/victoria-metrics            /usr/bin
+bin/vmagent                     /usr/bin
+bin/vmalert                     /usr/bin
+bin/vmalert-tool                /usr/bin
+bin/vmauth                      /usr/bin
+bin/vmbackup                    /usr/bin
+bin/vmctl                       /usr/bin
+bin/vmrestore                   /usr/bin
+etc/default/victoria-metrics    /etc/default
+etc/victoria-metrics.service    /lib/systemd/system

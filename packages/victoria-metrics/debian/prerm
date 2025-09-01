@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ -e "/lib/systemd/system/victoria-metrics.service" ]; then
+    echo 'Stopping Victoria Metrics...'
+    systemctl stop victoria-metrics
+fi
+
+if pgrep victoria-metrics >/dev/null; then
+    echo "Stopping Victoria Metrics..."
+    killall victoria-metrics
+fi
+
+exit 0
