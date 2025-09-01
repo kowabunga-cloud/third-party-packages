@@ -14,11 +14,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - run: sudo apt-get install -y wget
+      - run: sudo apt-get install -y wget debhelper
       - run: wget -qO- https://packages.kowabunga.cloud/kowabunga.asc | sudo tee /etc/apt/keyrings/kowabunga.asc >/dev/null
       - run: sudo cp kowabunga.sources /etc/apt/sources.list.d/kowabunga.sources
       - run: sudo apt-get update
-      - run: sudo apt-get -y install debhelper
       - run: ./build.sh
       - run: find . -name '*.deb'
       # - name: Release Debian Package
