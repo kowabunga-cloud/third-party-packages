@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+  purge)
+    rm -rf /var/lib/victoria-logs \
+           /var/log/victoria-logs \
+           /run/victoria-logs
+    # We do NOT remove the system user.
+    ;;
+esac

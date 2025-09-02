@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ -e "/lib/systemd/system/victoria-logs.service" ]; then
+    echo 'Stopping Victoria Logs...'
+    systemctl stop victoria-logs
+fi
+
+if pgrep victoria-logs >/dev/null; then
+    echo "Stopping Victoria Logs..."
+    killall victoria-logs
+fi
+
+exit 0

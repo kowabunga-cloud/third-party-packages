@@ -1,0 +1,5 @@
+bin/victoria-logs               /usr/bin
+bin/vlagent                     /usr/bin
+bin/vlogscli                    /usr/bin
+etc/default/victoria-logs       /etc/default
+etc/victoria-logs.service       /lib/systemd/system

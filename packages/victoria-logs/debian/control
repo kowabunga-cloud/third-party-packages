@@ -1,0 +1,14 @@
+Source: victoria-logs
+Section: net
+Priority: extra
+Maintainer: The Kowabunga Project <maintainers@kowabunga.cloud>
+Uploaders: The Kowabunga Project <maintainers@kowabunga.cloud>
+Build-Depends: debhelper
+Standards-Version: 4.6.2
+Xs-Vcs-Git: https://github.com/VictoriaMetrics/VictoriaLogs
+
+Package: victoria-logs
+Architecture: any
+Depends: ${misc:Depends}
+Description: Fast and easy to use database for logs,
+ which can efficiently handle terabytes of logs

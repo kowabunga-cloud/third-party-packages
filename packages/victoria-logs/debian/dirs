@@ -1,0 +1,5 @@
+etc/default
+lib/systemd/system
+usr/bin
+var/lib/victoria-logs
+var/log/victoria-logs
