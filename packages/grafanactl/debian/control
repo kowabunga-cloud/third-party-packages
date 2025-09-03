@@ -1,0 +1,14 @@
+Source: grafanactl
+Section: net
+Priority: extra
+Maintainer: The Kowabunga Project <maintainers@kowabunga.cloud>
+Uploaders: The Kowabunga Project <maintainers@kowabunga.cloud>
+Build-Depends: debhelper
+Standards-Version: 4.6.2
+Xs-Vcs-Git: https://github.com/grafana/grafanactl
+
+Package: grafanactl
+Architecture: any
+Depends: ${misc:Depends}
+Description: The Grafana CLI.
+ Command-line tool designed to simplify interaction with Grafana resources.
